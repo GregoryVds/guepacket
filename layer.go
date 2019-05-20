@@ -85,7 +85,7 @@ func (l GUE) NextLayerType() gopacket.LayerType {
 }
 
 func DecodeGUE(data []byte, p gopacket.PacketBuilder) error {
-	l := GUE{}
+	l := &GUE{}
 	if err := l.DecodeFromBytes(data, gopacket.NilDecodeFeedback); err != nil {
 		return err
 	}
